@@ -4,7 +4,7 @@ headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 Edge/16.16299"
 }
 
-brands = [] 
+brands = ['samsung','huawei','oppo','vivo','realme'] 
 # selectors
 
 BACK_CAM_SELECTOR = '#product_icons > li:nth-child(4)'
