@@ -1,0 +1,67 @@
+[tool.isort]
+profile = "black"
+
+[tool.black]
+line-length = 120
+
+# TODO ----------------------
+# project’s core metadata
+[project]
+name = "blockit"
+authors = [
+    { name = "0xsirsaif", email = "sirsaif99@gmail.com" }
+]
+description = "blockit - cli tool for encrypting and decrypting strings"
+readme = "README.md"
+# This clearly delineates which metadata is purposefully unspecified and expected to stay unspecified
+# compared to being provided via tooling later on.
+dynamic = ["version"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Security :: Cryptography",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "requests>=2.31.0",
+    "beautifulsoup4>=4.12.2",
+    "pandas>=2.0.3"
+]
+
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "isort",
+    "black",
+    "mypy",
+    "codecov",
+    "pytest-cov",
+    "flit",
+    "bumpversion",
+]
+
+# TODO ----------------------
+[project.urls]
+Documentation = "https://github/0xsirsaif/blockit"
+
+[tool.ruff]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    # "I",  # isort
+    "C",  # flake8-comprehensions
+    "B",  # flake8-bugbear
+]
+ignore = [
+    "E501",  # line too long, handled by black
+    "B008",  # do not perform function calls in argument defaults
+    "C901",  # too complex
+]
